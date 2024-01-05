@@ -22,5 +22,10 @@ public class SolidApp {
         // If we have a bulky methods in the interface, we might not end up using
         // The solution is to split them into different interfaces
 
+        // 5. Dependency Inversion
+        // High-level modules should not depend on low-level modules. They should both depend on abstractions.
+        // Implementation should depend on abstractions.
+        // Abstractions should not depend on the implementations
+
     }
 }
