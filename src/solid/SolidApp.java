@@ -16,5 +16,11 @@ public class SolidApp {
         // Subtypes must be substitutable for their base type without altering the correctness of the program.
         // Child class should be able to do all the things that his parents could do.
 
+        // 4. Interface Segregation
+        // A class should not be forced to implement interfaces it does not use.
+        // Interface is a contract that all class need to implement
+        // If we have a bulky methods in the interface, we might not end up using
+        // The solution is to split them into different interfaces
+
     }
 }
