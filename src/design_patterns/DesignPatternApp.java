@@ -14,5 +14,9 @@ public class DesignPatternApp {
         // Ensures a class has only one instance and provides a global point of access to it.
         // CreationalApp.singletonDemo();
 
+        // 2. Factory Method
+        // Defines an interface for creating an object but lets subclasses alter the of objects that will be created.
+        // CreationalApp.factoryMethodDemo();
+
     }
 }

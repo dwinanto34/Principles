@@ -1,12 +1,17 @@
 package design_patterns.creational;
 
+import design_patterns.creational.factory_method.DigitalProductCreator;
+import design_patterns.creational.factory_method.ProductCreator;
+import design_patterns.creational.factory_method.RetailProductCreator;
 import design_patterns.creational.singleton.ListSingleton;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CreationalApp {
     public static void main(String[] args) {
         singletonDemo();
+        factoryMethodDemo();
     }
 
     public static void singletonDemo() {
@@ -24,5 +29,13 @@ public class CreationalApp {
         List<String> singletonOne = ListSingleton.getInstance();
         List<String> singletonTwo = ListSingleton.getInstance();
         System.out.println(singletonOne == singletonTwo);
+    }
+
+    public static void factoryMethodDemo() {
+        ProductCreator digitalProductCreator = new DigitalProductCreator();
+        digitalProductCreator.checkout("CINEMA TIX");
+
+        ProductCreator retailProductCreator = new RetailProductCreator();
+        retailProductCreator.checkout("SHAMPOO");
     }
 }
