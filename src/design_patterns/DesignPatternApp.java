@@ -18,5 +18,10 @@ public class DesignPatternApp {
         // Defines an interface for creating an object but lets subclasses alter the of objects that will be created.
         // CreationalApp.factoryMethodDemo();
 
+        // 3. Abstract Factory
+        // Provides an interface for creating families of related or dependent objects without specifying their
+        // concrete classes. In other words, this model allows us to create objects that follow a general pattern.
+        // CreationalApp.abstractFactory();
+
     }
 }

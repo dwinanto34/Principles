@@ -1,5 +1,9 @@
 package design_patterns.creational;
 
+import design_patterns.creational.abstract_factory.Application;
+import design_patterns.creational.abstract_factory.factory.GUIFactory;
+import design_patterns.creational.abstract_factory.factory.MacOSFactory;
+import design_patterns.creational.abstract_factory.factory.WindowsFactory;
 import design_patterns.creational.factory_method.DigitalProductCreator;
 import design_patterns.creational.factory_method.ProductCreator;
 import design_patterns.creational.factory_method.RetailProductCreator;
@@ -12,6 +16,7 @@ public class CreationalApp {
     public static void main(String[] args) {
         singletonDemo();
         factoryMethodDemo();
+        abstractFactory();
     }
 
     public static void singletonDemo() {
@@ -37,5 +42,19 @@ public class CreationalApp {
 
         ProductCreator retailProductCreator = new RetailProductCreator();
         retailProductCreator.checkout("SHAMPOO");
+    }
+
+    public static void abstractFactory() {
+        GUIFactory factory;
+
+        String OPERATING_SYSTEM = "MAC";
+        if ("MAC".contains(OPERATING_SYSTEM)) {
+            factory = new MacOSFactory();
+        } else {
+            factory = new WindowsFactory();
+        }
+
+        Application app = new Application(factory);
+        app.paint();
     }
 }
