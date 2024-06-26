@@ -4,6 +4,7 @@ import design_patterns.creational.abstract_factory.Application;
 import design_patterns.creational.abstract_factory.factory.GUIFactory;
 import design_patterns.creational.abstract_factory.factory.MacOSFactory;
 import design_patterns.creational.abstract_factory.factory.WindowsFactory;
+import design_patterns.creational.builder.House;
 import design_patterns.creational.factory_method.DigitalProductCreator;
 import design_patterns.creational.factory_method.ProductCreator;
 import design_patterns.creational.factory_method.RetailProductCreator;
@@ -17,6 +18,7 @@ public class CreationalApp {
         singletonDemo();
         factoryMethodDemo();
         abstractFactory();
+        builder();
     }
 
     public static void singletonDemo() {
@@ -56,5 +58,19 @@ public class CreationalApp {
 
         Application app = new Application(factory);
         app.paint();
+    }
+
+    public static void builder() {
+        House smallHouse = new House.HouseBuilder("Brick Walls", "Shingle Roof")
+                .build();
+        System.out.println(smallHouse);
+
+        House luxuryVilla = new House.HouseBuilder("Concrete Walls", "Metal Roof")
+                .setRooms(5)
+                .setHasGarage(true)
+                .setHasSwimmingPool(true)
+                .setHasGarden(true)
+                .build();
+        System.out.println(luxuryVilla);
     }
 }

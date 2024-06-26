@@ -23,5 +23,11 @@ public class DesignPatternApp {
         // concrete classes. In other words, this model allows us to create objects that follow a general pattern.
         // CreationalApp.abstractFactory();
 
+        // 4. Builder
+        // Separates the construction of a complex object from its representation, allowing the same construction
+        // process to create different representations.
+        // Lombok also @Builder annotation that is specifically designed to address the Builder design pattern.
+        // CreationalApp.builder();
+
     }
 }
