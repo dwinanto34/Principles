@@ -29,5 +29,9 @@ public class DesignPatternApp {
         // Lombok also @Builder annotation that is specifically designed to address the Builder design pattern.
         // CreationalApp.builder();
 
+        // 5. Prototype
+        // Creates new objects by copying an existing object, known as the prototype.
+        // CreationalApp.prototype();
+
     }
 }

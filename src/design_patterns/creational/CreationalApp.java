@@ -8,6 +8,9 @@ import design_patterns.creational.builder.House;
 import design_patterns.creational.factory_method.DigitalProductCreator;
 import design_patterns.creational.factory_method.ProductCreator;
 import design_patterns.creational.factory_method.RetailProductCreator;
+import design_patterns.creational.prototype.Distributor;
+import design_patterns.creational.prototype.RetailSeller;
+import design_patterns.creational.prototype.Seller;
 import design_patterns.creational.singleton.ListSingleton;
 
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ public class CreationalApp {
         factoryMethodDemo();
         abstractFactory();
         builder();
+        prototype();
     }
 
     public static void singletonDemo() {
@@ -72,5 +76,25 @@ public class CreationalApp {
                 .setHasGarden(true)
                 .build();
         System.out.println(luxuryVilla);
+    }
+
+    public static void prototype() {
+        Distributor distributor = new Distributor();
+        distributor.setId("1");
+        distributor.setName("Global Distributor");
+
+        RetailSeller retailSeller = new RetailSeller();
+        retailSeller.setId("2");
+        retailSeller.setName("Local Retailer");
+
+        Seller clonedDistributor = distributor.clone();
+        System.out.println("Seller Type: " + clonedDistributor.getType());
+        System.out.println("Seller Name: " + clonedDistributor.getName());
+        clonedDistributor.sell();
+
+        Seller clonedRetailSeller = retailSeller.clone();
+        System.out.println("Seller Type: " + clonedRetailSeller.getType());
+        System.out.println("Seller Name: " + clonedRetailSeller.getName());
+        clonedRetailSeller.sell();
     }
 }
