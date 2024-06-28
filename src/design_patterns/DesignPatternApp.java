@@ -1,6 +1,7 @@
 package design_patterns;
 
 import design_patterns.creational.CreationalApp;
+import design_patterns.structural.StructuralApp;
 
 public class DesignPatternApp {
     public static void main(String[] args) {
@@ -32,6 +33,15 @@ public class DesignPatternApp {
         // 5. Prototype
         // Creates new objects by copying an existing object, known as the prototype.
         // CreationalApp.prototype();
+
+
+        System.out.println("Structural Design Patterns");
+        // Object composition or the organization of classes and objects.
+
+        // 1. Adapter
+        // Allows incompatible interfaces to work together by converting the interface of a class into another
+        // interface clients expect.
+        // StructuralApp.adapter();
 
     }
 }
