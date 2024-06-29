@@ -47,5 +47,10 @@ public class DesignPatternApp {
         // Separates an object's abstraction from its implementation, allowing them to vary independently.
         // StructuralApp.bridge();
 
+        // 3. Composite
+        // Composes objects into tree structures to represent part-whole hierarchies, allowing clients to treat
+        // individual objects and compositions uniformly.
+        // StructuralApp.composite();
+
     }
 }
