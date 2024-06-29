@@ -2,6 +2,7 @@ package design_patterns;
 
 import design_patterns.creational.CreationalApp;
 import design_patterns.structural.StructuralApp;
+import design_patterns.behavioral.BehavioralApp;
 
 public class DesignPatternApp {
     public static void main(String[] args) {
@@ -70,6 +71,14 @@ public class DesignPatternApp {
         // Provides a surrogate or placeholder for another object to control access to it.
         // StructuralApp.proxy();
 
+
+        System.out.println("Behavioral Design Patterns");
+        // Concerned with algorithms and the assignment of responsibilities between objects.
+
+        // 1. Chain of Responsibility
+        // Passes a request along a chain of handlers, where each handler decides either to process the request or
+        // to pass it on to the next handler in the chain.
+        // BehavioralApp.chainOfResponsibility();
 
     }
 }
