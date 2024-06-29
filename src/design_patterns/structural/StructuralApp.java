@@ -16,6 +16,7 @@ import design_patterns.structural.decorator.BasicNotification;
 import design_patterns.structural.decorator.EmailNotificationDecorator;
 import design_patterns.structural.decorator.Notification;
 import design_patterns.structural.decorator.SMSNotificationDecorator;
+import design_patterns.structural.facade.EcommerceFacade;
 
 public class StructuralApp {
     public static void main(String[] args) {
@@ -23,6 +24,7 @@ public class StructuralApp {
         bridge();
         composite();
         decorator();
+        facade();
     }
 
     public static void adapter() {
@@ -81,4 +83,10 @@ public class StructuralApp {
         Notification smsAndEmailNotification = new SMSNotificationDecorator(emailNotification);
         smsAndEmailNotification.send();
     }
+
+    public static void facade() {
+        EcommerceFacade ecommerceFacade = new EcommerceFacade();
+        ecommerceFacade.processOrder();
+    }
+
 }

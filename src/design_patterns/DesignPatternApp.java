@@ -57,5 +57,9 @@ public class DesignPatternApp {
         // subclassing for extending functionality.
         // StructuralApp.decorator();
 
+        // 5. Facade
+        // Provides a simplified interface to a complex subsystem.
+        // StructuralApp.facade();
+
     }
 }
