@@ -14,6 +14,8 @@ import design_patterns.behavioral.mediator.AirportControlTowerMediator;
 import design_patterns.behavioral.mediator.airplane.CommercialAirplane;
 import design_patterns.behavioral.memento.TextEditor;
 import design_patterns.behavioral.memento.TextEditorCaretaker;
+import design_patterns.behavioral.observer.Investor;
+import design_patterns.behavioral.observer.Stock;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -23,6 +25,7 @@ public class BehavioralApp {
         iterator();
         mediator();
         memento();
+        observer();
     }
 
     public static void chainOfResponsibility() {
@@ -104,5 +107,24 @@ public class BehavioralApp {
 
         caretaker.undo(textEditor);
         System.out.println("After undo, current text: " + textEditor.getText());
+    }
+
+    public static void observer() {
+        Stock googleStock = new Stock("Google", 1345.0);
+
+        Investor alice = new Investor("Alice");
+        Investor bob = new Investor("Bob");
+        Investor charlie = new Investor("Charlie");
+
+        googleStock.registerObserver(alice);
+        googleStock.registerObserver(bob);
+        googleStock.registerObserver(charlie);
+
+        googleStock.setPrice(1350.0);
+        googleStock.setPrice(1400.0);
+
+        googleStock.removeObserver(bob);
+
+        googleStock.setPrice(1450.0);
     }
 }
