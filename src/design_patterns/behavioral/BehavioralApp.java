@@ -6,12 +6,15 @@ import design_patterns.behavioral.command.*;
 import design_patterns.behavioral.interpreter.Expression;
 import design_patterns.behavioral.interpreter.MultiplyExpression;
 import design_patterns.behavioral.interpreter.NumberExpression;
+import design_patterns.behavioral.iterator.Iterator;
+import design_patterns.behavioral.iterator.StringCollection;
 
 public class BehavioralApp {
     public static void main(String[] args) {
         chainOfResponsibility();
         command();
         interpreter();
+        iterator();
     }
 
     public static void chainOfResponsibility() {
@@ -48,5 +51,18 @@ public class BehavioralApp {
         // Interpreting the expression
         int result = multiplication.interpret();
         System.out.println("3 * 5 = " + result);
+    }
+
+    public static void iterator() {
+        StringCollection stringCollection = new StringCollection(2);
+        stringCollection.addBook("ONE");
+        stringCollection.addBook("TWO");
+
+        Iterator<String> stringIterator = stringCollection.createIterator();
+
+        while (stringIterator.hasNext()) {
+            String val = stringIterator.next();
+            System.out.println(val);
+        }
     }
 }

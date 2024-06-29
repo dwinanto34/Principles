@@ -89,5 +89,10 @@ public class DesignPatternApp {
         // Defines a grammar for a language and an interpreter to interpret the grammar.
         // BehavioralApp.interpreter();
 
+        // 4. Iterator
+        // Provides a way to access the elements of an aggregate object sequentially without exposing
+        // its underlying representation.
+        // BehavioralApp.iterator();
+
     }
 }
