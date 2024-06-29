@@ -85,5 +85,9 @@ public class DesignPatternApp {
         // requests, queueing of requests, and logging of requests.
         // BehavioralApp.command();
 
+        // 3. Interpreter
+        // Defines a grammar for a language and an interpreter to interpret the grammar.
+        // BehavioralApp.interpreter();
+
     }
 }

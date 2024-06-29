@@ -3,11 +3,15 @@ package design_patterns.behavioral;
 import design_patterns.behavioral.chain_of_responsibility.LoggerChain;
 import design_patterns.behavioral.chain_of_responsibility.logger.Logger;
 import design_patterns.behavioral.command.*;
+import design_patterns.behavioral.interpreter.Expression;
+import design_patterns.behavioral.interpreter.MultiplyExpression;
+import design_patterns.behavioral.interpreter.NumberExpression;
 
 public class BehavioralApp {
     public static void main(String[] args) {
         chainOfResponsibility();
         command();
+        interpreter();
     }
 
     public static void chainOfResponsibility() {
@@ -31,5 +35,18 @@ public class BehavioralApp {
 
         remoteControl.setCommand(lightOff);
         remoteControl.pressButton();
+    }
+
+    public static void interpreter() {
+        // Terminal expressions
+        Expression three = new NumberExpression(3);
+        Expression five = new NumberExpression(5);
+
+        // Non-terminal expressions
+        Expression multiplication = new MultiplyExpression(three, five);
+
+        // Interpreting the expression
+        int result = multiplication.interpret();
+        System.out.println("3 * 5 = " + result);
     }
 }
