@@ -99,5 +99,9 @@ public class DesignPatternApp {
         // objects from referring to each other explicitly.
         // BehavioralApp.mediator();
 
+        // 6. Memento
+        // Provides the ability to restore an object to its previous state.
+        // BehavioralApp.memento();
+
     }
 }

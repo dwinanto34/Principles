@@ -12,6 +12,8 @@ import design_patterns.behavioral.mediator.AirTrafficControlTowerMediator;
 import design_patterns.behavioral.mediator.airplane.Airplane;
 import design_patterns.behavioral.mediator.AirportControlTowerMediator;
 import design_patterns.behavioral.mediator.airplane.CommercialAirplane;
+import design_patterns.behavioral.memento.TextEditor;
+import design_patterns.behavioral.memento.TextEditorCaretaker;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class BehavioralApp {
         interpreter();
         iterator();
         mediator();
+        memento();
     }
 
     public static void chainOfResponsibility() {
@@ -79,5 +82,27 @@ public class BehavioralApp {
 
         airplane1.requestTakeoff();
         airplane2.requestLanding();
+    }
+
+    public static void memento() {
+        TextEditor textEditor = new TextEditor();
+        TextEditorCaretaker caretaker = new TextEditorCaretaker();
+
+        textEditor.setText("ONE");
+        caretaker.save(textEditor);
+        System.out.println("Current text: " + textEditor.getText());
+
+        textEditor.setText("TWO");
+        caretaker.save(textEditor);
+        System.out.println("Current text: " + textEditor.getText());
+
+        textEditor.setText("THREE");
+        System.out.println("Current text: " + textEditor.getText());
+
+        caretaker.undo(textEditor);
+        System.out.println("After undo, current text: " + textEditor.getText());
+
+        caretaker.undo(textEditor);
+        System.out.println("After undo, current text: " + textEditor.getText());
     }
 }
