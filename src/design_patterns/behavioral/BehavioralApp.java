@@ -8,6 +8,10 @@ import design_patterns.behavioral.interpreter.MultiplyExpression;
 import design_patterns.behavioral.interpreter.NumberExpression;
 import design_patterns.behavioral.iterator.Iterator;
 import design_patterns.behavioral.iterator.StringCollection;
+import design_patterns.behavioral.mediator.AirTrafficControlTowerMediator;
+import design_patterns.behavioral.mediator.airplane.Airplane;
+import design_patterns.behavioral.mediator.AirportControlTowerMediator;
+import design_patterns.behavioral.mediator.airplane.CommercialAirplane;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -15,6 +19,7 @@ public class BehavioralApp {
         command();
         interpreter();
         iterator();
+        mediator();
     }
 
     public static void chainOfResponsibility() {
@@ -64,5 +69,15 @@ public class BehavioralApp {
             String val = stringIterator.next();
             System.out.println(val);
         }
+    }
+
+    public static void mediator() {
+        AirTrafficControlTowerMediator controlTower = new AirportControlTowerMediator();
+
+        Airplane airplane1 = new CommercialAirplane(controlTower);
+        Airplane airplane2 = new CommercialAirplane(controlTower);
+
+        airplane1.requestTakeoff();
+        airplane2.requestLanding();
     }
 }
