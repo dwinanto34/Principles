@@ -19,6 +19,8 @@ import design_patterns.structural.decorator.SMSNotificationDecorator;
 import design_patterns.structural.facade.EcommerceFacade;
 import design_patterns.structural.flyweight.Font;
 import design_patterns.structural.flyweight.FontFactory;
+import design_patterns.structural.proxy.NetworkResource;
+import design_patterns.structural.proxy.NetworkResourceProxy;
 
 public class StructuralApp {
     public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class StructuralApp {
         decorator();
         facade();
         flyweight();
+        proxy();
     }
 
     public static void adapter() {
@@ -103,4 +106,10 @@ public class StructuralApp {
         System.out.println("\nNumber of unique fonts created: " + FontFactory.getCacheSize());
     }
 
+    public static void proxy() {
+        NetworkResource resourceProxy = new NetworkResourceProxy("192.168.1.100");
+
+        resourceProxy.fetchData("/api/data");
+        resourceProxy.fetchData("/api/secure-data");
+    }
 }

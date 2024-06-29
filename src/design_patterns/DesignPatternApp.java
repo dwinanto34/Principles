@@ -66,5 +66,10 @@ public class DesignPatternApp {
         // are identical.
         // StructuralApp.flyweight();
 
+        // 7. Proxy
+        // Provides a surrogate or placeholder for another object to control access to it.
+        // StructuralApp.proxy();
+
+
     }
 }
