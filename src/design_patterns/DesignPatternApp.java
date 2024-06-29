@@ -52,5 +52,10 @@ public class DesignPatternApp {
         // individual objects and compositions uniformly.
         // StructuralApp.composite();
 
+        // 4. Decorator
+        // Adds additional responsibilities to an object dynamically, providing a flexible alternative to
+        // subclassing for extending functionality.
+        // StructuralApp.decorator();
+
     }
 }

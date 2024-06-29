@@ -12,12 +12,17 @@ import design_patterns.structural.bridge.remote_control.RemoteControl;
 import design_patterns.structural.composite.Department;
 import design_patterns.structural.composite.Employee;
 import design_patterns.structural.composite.OrganizationComponent;
+import design_patterns.structural.decorator.BasicNotification;
+import design_patterns.structural.decorator.EmailNotificationDecorator;
+import design_patterns.structural.decorator.Notification;
+import design_patterns.structural.decorator.SMSNotificationDecorator;
 
 public class StructuralApp {
     public static void main(String[] args) {
         adapter();
         bridge();
         composite();
+        decorator();
     }
 
     public static void adapter() {
@@ -61,5 +66,19 @@ public class StructuralApp {
 
         // Showing details of the entire organization
         headDept.showDetails();
+    }
+
+    public static void decorator() {
+        Notification basicNotification = new BasicNotification();
+        System.out.println("\nBasic Notification:");
+        basicNotification.send();
+
+        System.out.println("\nEmail Notification:");
+        Notification emailNotification = new EmailNotificationDecorator(basicNotification);
+        emailNotification.send();
+
+        System.out.println("\nSMS and Email Notification:");
+        Notification smsAndEmailNotification = new SMSNotificationDecorator(emailNotification);
+        smsAndEmailNotification.send();
     }
 }
