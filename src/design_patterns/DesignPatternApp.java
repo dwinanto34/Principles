@@ -80,5 +80,10 @@ public class DesignPatternApp {
         // to pass it on to the next handler in the chain.
         // BehavioralApp.chainOfResponsibility();
 
+        // 2. Command
+        // Encapsulates a request as an object, thereby allowing for parameterization of clients with different
+        // requests, queueing of requests, and logging of requests.
+        // BehavioralApp.command();
+
     }
 }
