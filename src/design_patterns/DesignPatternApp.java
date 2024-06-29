@@ -43,5 +43,9 @@ public class DesignPatternApp {
         // interface clients expect.
         // StructuralApp.adapter();
 
+        // 2. Bridge
+        // Separates an object's abstraction from its implementation, allowing them to vary independently.
+        // StructuralApp.bridge();
+
     }
 }
