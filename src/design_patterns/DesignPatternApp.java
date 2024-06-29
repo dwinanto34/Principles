@@ -61,5 +61,10 @@ public class DesignPatternApp {
         // Provides a simplified interface to a complex subsystem.
         // StructuralApp.facade();
 
+        // 6. Flyweight
+        // Reduces the cost of creating and managing a large number of similar objects by sharing objects that
+        // are identical.
+        // StructuralApp.flyweight();
+
     }
 }

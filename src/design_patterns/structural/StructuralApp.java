@@ -17,6 +17,8 @@ import design_patterns.structural.decorator.EmailNotificationDecorator;
 import design_patterns.structural.decorator.Notification;
 import design_patterns.structural.decorator.SMSNotificationDecorator;
 import design_patterns.structural.facade.EcommerceFacade;
+import design_patterns.structural.flyweight.Font;
+import design_patterns.structural.flyweight.FontFactory;
 
 public class StructuralApp {
     public static void main(String[] args) {
@@ -25,6 +27,7 @@ public class StructuralApp {
         composite();
         decorator();
         facade();
+        flyweight();
     }
 
     public static void adapter() {
@@ -87,6 +90,17 @@ public class StructuralApp {
     public static void facade() {
         EcommerceFacade ecommerceFacade = new EcommerceFacade();
         ecommerceFacade.processOrder();
+    }
+
+    public static void flyweight() {
+        String[] texts = { "Hello", "World", "Flyweight", "Pattern", "Demo" };
+
+        for (String text : texts) {
+            Font font = FontFactory.getFont("Times New Roman");
+            font.render(text);
+        }
+
+        System.out.println("\nNumber of unique fonts created: " + FontFactory.getCacheSize());
     }
 
 }
