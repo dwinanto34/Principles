@@ -22,6 +22,9 @@ import design_patterns.behavioral.strategy.cart.ShoppingCart;
 import design_patterns.behavioral.strategy.payment.BitcoinPayment;
 import design_patterns.behavioral.strategy.payment.CreditCardPayment;
 import design_patterns.behavioral.strategy.payment.PayPalPayment;
+import design_patterns.behavioral.template_method.CSVDataProcessor;
+import design_patterns.behavioral.template_method.DataProcessor;
+import design_patterns.behavioral.template_method.XMLDataProcessor;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -34,6 +37,7 @@ public class BehavioralApp {
         observer();
         state();
         strategy();
+        templateMethod();
     }
 
     public static void chainOfResponsibility() {
@@ -176,5 +180,15 @@ public class BehavioralApp {
         // Pay using Bitcoin
         cart.setPaymentStrategy(new BitcoinPayment("1ABCDEF1234567890XYZ"));
         cart.pay();
+    }
+
+    public static void templateMethod() {
+        DataProcessor csvProcessor = new CSVDataProcessor();
+        csvProcessor.process();
+
+        System.out.println();
+
+        DataProcessor xmlProcessor = new XMLDataProcessor();
+        xmlProcessor.process();
     }
 }

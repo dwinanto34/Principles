@@ -117,5 +117,10 @@ public class DesignPatternApp {
         // algorithm to vary independently of the clients that use it.
         // BehavioralApp.strategy();
 
+        // 10. Template Method
+        // Defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of
+        // the algorithm without changing its structure.
+        // BehavioralApp.templateMethod();
+
     }
 }
