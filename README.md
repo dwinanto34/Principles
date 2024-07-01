@@ -1,4 +1,4 @@
-  # Software Development Principles Code Showcase
+# Software Development Principles Code Showcase
 
 This repository serves as a comprehensive demonstration of key software development principles. Each section corresponds to a specific development aspect, providing links to individual commits that showcase the implementation details.
 
