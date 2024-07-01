@@ -112,5 +112,10 @@ public class DesignPatternApp {
         // Allows an object to alter its behavior when its internal state changes, appearing to change its class.
         // BehavioralApp.state();
 
+        // 9. Strategy
+        // Defines a family of algorithms, encapsulates each one, and makes them interchangeable, allowing the
+        // algorithm to vary independently of the clients that use it.
+        // BehavioralApp.strategy();
+
     }
 }

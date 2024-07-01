@@ -17,6 +17,11 @@ import design_patterns.behavioral.memento.TextEditorCaretaker;
 import design_patterns.behavioral.observer.Investor;
 import design_patterns.behavioral.observer.Stock;
 import design_patterns.behavioral.state.VendingMachine;
+import design_patterns.behavioral.strategy.cart.Item;
+import design_patterns.behavioral.strategy.cart.ShoppingCart;
+import design_patterns.behavioral.strategy.payment.BitcoinPayment;
+import design_patterns.behavioral.strategy.payment.CreditCardPayment;
+import design_patterns.behavioral.strategy.payment.PayPalPayment;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -28,6 +33,7 @@ public class BehavioralApp {
         memento();
         observer();
         state();
+        strategy();
     }
 
     public static void chainOfResponsibility() {
@@ -151,6 +157,24 @@ public class BehavioralApp {
     }
 
     public static void strategy() {
+        ShoppingCart cart = new ShoppingCart();
 
+        Item item1 = new Item("Laptop", 1000);
+        Item item2 = new Item("Phone", 500);
+
+        cart.addItem(item1);
+        cart.addItem(item2);
+
+        // Pay using Credit Card
+        cart.setPaymentStrategy(new CreditCardPayment("1234567890123456", "John Doe", "123", "12/24"));
+        cart.pay();
+
+        // Pay using PayPal
+        cart.setPaymentStrategy(new PayPalPayment("johndoe@example.com", "mypassword"));
+        cart.pay();
+
+        // Pay using Bitcoin
+        cart.setPaymentStrategy(new BitcoinPayment("1ABCDEF1234567890XYZ"));
+        cart.pay();
     }
 }
