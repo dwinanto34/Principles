@@ -16,6 +16,7 @@ import design_patterns.behavioral.memento.TextEditor;
 import design_patterns.behavioral.memento.TextEditorCaretaker;
 import design_patterns.behavioral.observer.Investor;
 import design_patterns.behavioral.observer.Stock;
+import design_patterns.behavioral.state.VendingMachine;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -26,6 +27,7 @@ public class BehavioralApp {
         mediator();
         memento();
         observer();
+        state();
     }
 
     public static void chainOfResponsibility() {
@@ -126,5 +128,29 @@ public class BehavioralApp {
         googleStock.removeObserver(bob);
 
         googleStock.setPrice(1450.0);
+    }
+
+    public static void state() {
+        VendingMachine vendingMachine = new VendingMachine(3);
+
+        vendingMachine.insertCoin();
+        vendingMachine.selectProduct();
+        vendingMachine.dispense();
+
+        vendingMachine.insertCoin();
+        vendingMachine.ejectCoin();
+        vendingMachine.selectProduct();
+
+        vendingMachine.insertCoin();
+        vendingMachine.selectProduct();
+        vendingMachine.dispense();
+
+        vendingMachine.insertCoin();
+        vendingMachine.selectProduct();
+        vendingMachine.dispense();
+    }
+
+    public static void strategy() {
+
     }
 }

@@ -108,5 +108,9 @@ public class DesignPatternApp {
         // dependents are notified and updated automatically.
         // BehavioralApp.observer();
 
+        // 8. State
+        // Allows an object to alter its behavior when its internal state changes, appearing to change its class.
+        // BehavioralApp.state();
+
     }
 }
