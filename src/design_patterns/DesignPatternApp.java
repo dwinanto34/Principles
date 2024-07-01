@@ -122,5 +122,9 @@ public class DesignPatternApp {
         // the algorithm without changing its structure.
         // BehavioralApp.templateMethod();
 
+        // 11. Visitor
+        // Represents an operation to be performed on the elements of an object structure, allowing one to define a
+        // new operation without changing the classes of the elements on which it operates.
+        // BehavioralApp.visitor();
     }
 }

@@ -25,6 +25,16 @@ import design_patterns.behavioral.strategy.payment.PayPalPayment;
 import design_patterns.behavioral.template_method.CSVDataProcessor;
 import design_patterns.behavioral.template_method.DataProcessor;
 import design_patterns.behavioral.template_method.XMLDataProcessor;
+import design_patterns.behavioral.visitor.DocumentVisitor;
+import design_patterns.behavioral.visitor.ExportVisitor;
+import design_patterns.behavioral.visitor.RenderVisitor;
+import design_patterns.behavioral.visitor.document.DocumentElement;
+import design_patterns.behavioral.visitor.document.Image;
+import design_patterns.behavioral.visitor.document.Paragraph;
+import design_patterns.behavioral.visitor.document.Table;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BehavioralApp {
     public static void main(String[] args) {
@@ -38,6 +48,7 @@ public class BehavioralApp {
         state();
         strategy();
         templateMethod();
+        visitor();
     }
 
     public static void chainOfResponsibility() {
@@ -190,5 +201,25 @@ public class BehavioralApp {
 
         DataProcessor xmlProcessor = new XMLDataProcessor();
         xmlProcessor.process();
+    }
+
+    public static void visitor() {
+        List<DocumentElement> documentElements = new ArrayList<>();
+        documentElements.add(new Paragraph("This is a paragraph."));
+        documentElements.add(new Image("/path/to/image.jpg"));
+        documentElements.add(new Table(new String[][] {{"A1", "A2"}, {"B1", "B2"}}));
+
+        DocumentVisitor renderVisitor = new RenderVisitor();
+        DocumentVisitor exportVisitor = new ExportVisitor();
+
+        for (DocumentElement element : documentElements) {
+            element.accept(renderVisitor);
+        }
+
+        System.out.println();
+
+        for (DocumentElement element : documentElements) {
+            element.accept(exportVisitor);
+        }
     }
 }
